@@ -50,3 +50,10 @@
 .degree-section h2 {
   font-size: 40px;
 }
+
+@media (max-width: 500px) {
+  .location,
+  .temperature {
+    margin-left: 150px;
+  }
+}
