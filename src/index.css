@@ -17,7 +17,7 @@
 
 .location,
 .temperature {
-  height: 30vh;
+  height: 20vh;
   width: 50%;
   display: flex;
   justify-content: space-around;
@@ -31,6 +31,9 @@
 
 .temperature {
   flex-direction: column;
+}
+.temperature .temperature-description {
+  font-size: 30px;
 }
 
 .degree-section {
