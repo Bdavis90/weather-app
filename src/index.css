@@ -24,6 +24,11 @@
   align-items: center;
 }
 
+.location,
+#icon1 {
+  margin-left: 40px;
+}
+
 .temperature {
   flex-direction: column;
 }

@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="app">
         <Location />
-        <Temperature />
+        {/* <Temperature /> */}
       </div>
     );
   }
