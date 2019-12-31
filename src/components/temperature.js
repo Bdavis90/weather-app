@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 
 class Temperature extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      degree: "F"
+    };
+  }
+
+  convertTemp() {
+    if (this.state.degree === "F") {
+      this.setState({ degree: "C" });
+    } else {
+      return this.state.degree;
+    }
+  }
   render() {
     return (
       <div className="temperature">
         <div className="degree-section">
-          <h2 className="temperature-degree">34</h2>
-          <span>F</span>
+          <h2 className="temperature-degree">{this.props.temperature}</h2>
+          <span>{this.state.degree}</span>
         </div>
-        <div className="temperature-description">It's cold</div>
+        <div className="temperature-description">{this.props.summary}</div>
       </div>
     );
   }
