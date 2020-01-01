@@ -15,10 +15,15 @@
   color: white;
 }
 
-.location,
+.location {
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .temperature {
-  height: 20vh;
-  width: 50%;
+  height: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -39,7 +44,6 @@
 .degree-section {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .degree-section span {
@@ -51,9 +55,11 @@
   font-size: 40px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 360px) {
   .location,
   .temperature {
-    margin-left: 150px;
+    height: 100vh;
+    background: red;
+    /* margin-left: 150px; */
   }
 }
