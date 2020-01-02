@@ -10,7 +10,7 @@ class Location extends Component {
     summary: "",
     icon: ""
   };
-
+  // fixing commit problem
   getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
