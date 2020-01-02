@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Temperature from "./temperature";
-import Daily from "./daily";
 import { Skycons } from "../skycons";
 class Location extends Component {
   state = {
