@@ -9,8 +9,7 @@ class Location extends Component {
     timezone: "",
     temperature: 0,
     summary: "",
-    icon: "",
-    daily: []
+    icon: ""
   };
 
   getLocation = () => {
@@ -18,22 +17,18 @@ class Location extends Component {
       navigator.geolocation.getCurrentPosition(position => {
         this.setState({ long: position.coords.longitude });
         this.setState({ lat: position.coords.latitude });
-        console.log(position);
-        console.log("lat", this.state.lat);
         const proxy = "https://cors-anywhere.herokuapp.com/";
         const api = `${proxy}https://api.darksky.net/forecast/30b1f2e824444b68d4ac18c0925070b9/${this.state.lat}, ${this.state.long}`;
 
         fetch(api)
           .then(res => res.json())
           .then(data => {
-            console.log("data", data);
             const { temperature, summary, icon } = data.currently;
             this.setState({
               temperature,
               summary,
               timezone: data.timezone,
-              icon,
-              daily: data.daily.data
+              icon
             });
             this.setIcons(this.state.icon, document.querySelector("#icon1"));
           })
@@ -44,7 +39,7 @@ class Location extends Component {
 
   setIcons(icon, iconID) {
     const skycons = new Skycons({ color: "white" });
-    const currentIcon = icon.replace("-", "_").toUpperCase();
+    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
     skycons.play();
     return skycons.set(iconID, Skycons[currentIcon]);
   }
@@ -61,9 +56,6 @@ class Location extends Component {
             temperature={Math.round(this.state.temperature)}
             summary={this.state.summary}
           />
-        </div>
-        <div>
-          <Daily daily={this.state.daily} />
         </div>
       </div>
     );

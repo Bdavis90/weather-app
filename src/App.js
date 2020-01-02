@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Location from "./components/location";
+import Daily from "./components/daily";
 import "./App.css";
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="app">
         <Location />
+        {/* <Daily /> */}
       </div>
     );
   }
