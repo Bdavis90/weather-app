@@ -4,17 +4,10 @@ class Temperature extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      degree: "F"
+      degree: "F",
     };
   }
 
-  convertTemp() {
-    if (this.state.degree === "F") {
-      this.setState({ degree: "C" });
-    } else {
-      return this.state.degree;
-    }
-  }
   render() {
     return (
       <div className="temperature">
